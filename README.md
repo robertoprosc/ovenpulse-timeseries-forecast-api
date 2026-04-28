@@ -48,7 +48,6 @@ ovenpulse-timeseries-forecast-api/
 ### Windows (PowerShell)
 
 ```powershell
-cd "C:\Users\r.proscia\VS_Projects\PROGETTI ACCADEMICI\pirelli_definitive"
 python -m venv .venv
 .\.venv\Scripts\Activate.ps1
 python -m pip install --upgrade pip
