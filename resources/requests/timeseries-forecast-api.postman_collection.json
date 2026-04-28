@@ -1,0 +1,266 @@
+{
+	"info": {
+		"_postman_id": "74ccb812-8f5f-4272-9518-657b899f50aa",
+		"name": "timeseries-forecast-api",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "29895326"
+	},
+	"item": [
+		{
+			"name": "preprocess_and_calculate_stats",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"file_name\": \"Cakes_df.csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/stats/preprocess_and_calculate_stats",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"stats",
+						"preprocess_and_calculate_stats"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "affects_baking_time",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"file_name\": \"Cakes_df.csv\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/stats/affects_backing_time",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"stats",
+						"affects_backing_time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "anomaly_detection_single_noanomalies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"single_measurement\":\r\n    {\r\n    \"Phase_01\": 930.85,\r\n    \"Phase_02\": 155.43,\r\n    \"Phase_03\": 107.50,\r\n    \"Phase_04\": 6.20,\r\n    \"Phase_05\": 19.02,\r\n    \"Phase_06\": 16.50,\r\n    \"Phase_07\": 34.11,\r\n    \"Phase_08\": 26.50,\r\n    \"Phase_09\": 4.58,\r\n    \"Cake_ID\": \"abc123\",\r\n    \"Oven\": \"Oven_1\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/anomaly_detection_single",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"anomaly_detection_single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "anomaly_detection_single_withanomalies",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"single_measurement\":{\r\n    \"Phase_01\": 930.85,\r\n    \"Phase_02\": 195.00,  \r\n    \"Phase_03\": 107.50,\r\n    \"Phase_04\": 6.20,\r\n    \"Phase_05\": 25.00,  \r\n    \"Phase_06\": 16.50,\r\n    \"Phase_07\": 34.11,\r\n    \"Phase_08\": 26.50,\r\n    \"Phase_09\": 4.58,\r\n    \"Cake_ID\": \"abc123\",\r\n    \"Oven\": \"Oven_1\"\r\n    }\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/anomaly_detection_single",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"anomaly_detection_single"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "anomaly_detection_massive_dataset",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_name\":\"test.xlsx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/anomaly_detection_massive",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"anomaly_detection_massive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "anomaly_trend_detection",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_name\":\"test.xlsx\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/anomaly_detection_massive",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"anomaly_detection_massive"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forecast_bakery_time",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_name\":\"./resources/dataset/Cakes_df.csv\",\r\n  \"daily\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/forecasting_bakery_time",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"forecasting_bakery_time"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "forecast_bakery_time_phases",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"file_name\":\"./resources/dataset/Cakes_df.csv\",\r\n  \"daily\":true\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://127.0.0.1:5003/anomaly/forecasting_bakery_time_phases",
+					"protocol": "http",
+					"host": [
+						"127",
+						"0",
+						"0",
+						"1"
+					],
+					"port": "5003",
+					"path": [
+						"anomaly",
+						"forecasting_bakery_time_phases"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
